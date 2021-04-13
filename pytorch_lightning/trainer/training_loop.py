@@ -28,8 +28,8 @@ from pytorch_lightning.trainer.supporters import TensorRunningAccum
 from pytorch_lightning.utilities import _TPU_AVAILABLE, AMPType, DeviceType, parsing
 from pytorch_lightning.utilities.distributed import rank_zero_info
 from pytorch_lightning.utilities.exceptions import MisconfigurationException
-from pytorch_lightning.utilities.model_helpers import is_overridden
 from pytorch_lightning.utilities.finite_checks import detect_nan_parameters
+from pytorch_lightning.utilities.model_helpers import is_overridden
 from pytorch_lightning.utilities.parsing import AttributeDict
 from pytorch_lightning.utilities.warnings import WarningCache
 
@@ -348,8 +348,8 @@ class TrainLoop:
 
     @staticmethod
     def _prepare_outputs(
-            outputs: List[List[List[Result]]],
-            batch_mode: bool,
+        outputs: List[List[List[Result]]],
+        batch_mode: bool,
     ) -> Union[List[List[List[Dict]]], List[List[Dict]], List[Dict], Dict]:
         """
         Extract required information from batch or epoch end results.
